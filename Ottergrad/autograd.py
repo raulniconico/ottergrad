@@ -441,43 +441,6 @@ class Graph:
     def forwardpropagation(self):
         def forward(node: Tensor):
 
-            # if node.getargs() is not None:
-            #     try:
-            #         args = []
-            #         for arg in node.getargs():
-            #             if type(arg) is Tensor:
-            #                 forward(arg)
-            #                 args.append(arg.getdata())
-            #             else:
-            #                 args.append(arg)
-            #         node.args = args
-            #
-            #     except:
-            #
-            #         if type(node.getargs()) is Tensor:
-            #             forward(node.getargs())
-            #             node.args = node.getargs().getdata()
-            #
-            # if node.getkwargs() is not None:
-            #     try:
-            #         kwargs = []
-            #         for kwarg in node.getkwargs():
-            #             if type(kwarg) is Tensor:
-            #                 forward(kwarg)
-            #                 kwargs.append(kwarg.getdata())
-            #             else:
-            #                 kwargs.append(kwarg)
-            #         node.kwargs = kwargs
-            #
-            #     except:
-            #         if type(node.getkwargs()) is Tensor:
-            #             forward(node.getkwargs())
-            #             node.kwargs = node.getkwargs().getdata()
-            #
-            # if type(node.getdata()) is Tensor:
-            #     forward(node.getdata())
-            #     node.data = node.getdata().getdata()
-
             if node.getleft() is not None:
                 if node.getleft().getdata() is None:
                     forward(node.getleft())
@@ -566,4 +529,3 @@ class Optim:
         self.decay_rate = decay_rate
         self.pretrained = pretrained
 
-    # def forward(self):
