@@ -14,10 +14,10 @@ The following are the main components of ottergrad and a mini user guide,
 <!-- toc -->
 
 - [Tensor](#Tensor)
-- [Numpy support](#Numpy_support)
-- [Func and Graph](#Func_and_Graph)
-- [Forward and back propagation](#Forward_and_back_propagation)
-- [Neural Network support](#Neural_Network_support)
+- [Numpy support](#Numpy-support)
+- [Func and Graph](#Func-and-Graph)
+- [Forward and back propagation](#Forward-and-back-propagation)
+- [Neural Network support](#Neural-Network-support)
 - [Examples](#Examples)
 
 <!-- tocstop -->
