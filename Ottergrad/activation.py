@@ -54,6 +54,7 @@ class _LeakyReLU(Func):
         return func
 
 
+@checktensor
 def LeakyReLU(x):
     func = _LeakyReLU()
     return func(x)

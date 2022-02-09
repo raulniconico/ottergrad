@@ -175,7 +175,7 @@ class _exp(Func):
     @staticmethod
     @checkgradisnone
     def _gradient(node):
-        node.getleft().setgrad(node.getleft().getgrad() + np.dot(node.getgrad(), node.getdata()))
+        node.getleft().setgrad(node.getleft().getgrad() + (node.getgrad() * np.exp(node.getleft().getdata())))
 
 
 def exp(x, **kwargs):
@@ -279,13 +279,13 @@ class _sin(Func):
         node.setdata(np.sin(node.getleft().getdata()))
 
     def gradient(self):
-        self.getroot().getleft().setgrad(
-            np.dot(self.getroot().getleft().getgrad() + self.root.getgrad().T, np.cos(self.root.getleft().getdata())))
+        self.getroot().getleft().setgrad(self.getroot().getleft().getgrad() +
+            np.multiply(self.root.getgrad(), np.cos(self.root.getleft().getdata())))
 
     @staticmethod
     @checkgradisnone
     def _gradient(node):
-        node.getleft().setgrad(node.getleft().getgrad() + np.dot(node.getgrad().T, np.cos(node.getleft().getdata())))
+        node.getleft().setgrad(node.getleft().getgrad() + np.multiply(node.getgrad(), np.cos(node.getleft().getdata())))
 
 
 @checktensor
@@ -312,12 +312,13 @@ class _cos(Func):
 
     def gradient(self):
         self.getroot().getleft().setgrad(self.getroot().getleft().getgrad() +
-                                         np.dot(self.root.getgrad().T, -np.sin(self.root.getleft().getdata())))
+                                         np.multiply(self.root.getgrad(), -np.sin(self.root.getleft().getdata())))
 
     @staticmethod
     @checkgradisnone
     def _gradient(node):
-        node.getleft().setgrad(node.getleft().getgrad() + np.dot(node.getgrad().T, -np.sin(node.getleft().getdata())))
+        node.getleft().setgrad(node.getleft().getgrad() +
+                               np.multiply(node.getgrad(), -np.sin(node.getleft().getdata())))
 
 
 @checktensor
@@ -344,13 +345,14 @@ class _tan(Func):
 
     def gradient(self):
         self.getroot().getleft().setgrad(self.getroot().getleft().getgrad() +
-                                         np.dot(self.root.getgrad().T, 1 - np.tanh(self.root.getleft().getdata())**2))
+                                         np.multiply(self.root.getgrad(), 1 -
+                                                     np.tanh(self.root.getleft().getdata())**2))
 
     @staticmethod
     @checkgradisnone
     def _gradient(node):
         node.getleft().setgrad(node.getleft().getgrad() +
-                               np.dot(node.getgrad().T, 1 - np.tanh(node.getleft().getdata())**2))
+                               np.multiply(node.getgrad(), 1 - np.tanh(node.getleft().getdata())**2))
 
 
 @checktensor
@@ -390,8 +392,13 @@ class _where(Func):
 
         x = copy.deepcopy(node.getargs()[1])
         y = copy.deepcopy(node.getargs()[2])
+
+
+
         x.backward()
         y.backward()
+        print(node.getargs()[0].getroot().getdata())
+
         node.getleft().setgrad(np.where(node.getargs()[0].getroot().getdata(),
                                         x.getinput().getgrad(), y.getinput().getgrad()))
 

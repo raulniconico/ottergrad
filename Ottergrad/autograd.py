@@ -189,6 +189,7 @@ class Tensor:
         def _forwardfunc(node):
             node.setdata(np.multiply(node.getleft().getdata(), node.getright().getdata()))
 
+        @checkgradisnone
         def _gradient(node):
             node.getleft().setgrad(node.getleft().getgrad() + np.multiply(node.getright().getdata(), node.getgrad()))
             node.getright().setgrad(node.getright().getgrad() + np.multiply(node.getleft().getdata(), node.getgrad()))
@@ -453,7 +454,7 @@ class Graph:
             if func is not None:
                 func(node)
             else:
-                print(str(node.getdata()) + " has no forward function")
+                pass
             return
 
         forward(self.getroot())
