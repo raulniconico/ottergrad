@@ -13,7 +13,7 @@ The following are the main components of ottergrad and a mini user guide,
 
 <!-- toc -->
 
-- [Tensor and Func](#Tensor_and_Func)
+- [Tensor](#Tensor)
 - [Numpy support](#Numpy_support)
 - [Func and Graph](#Func_and_Graph)
 - [Forward and back propagation](#Forward_and_back_propagation)
