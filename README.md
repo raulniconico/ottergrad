@@ -1,6 +1,6 @@
 # ottergrad
 
-![ottergrad Logo](https://github.com/raulniconico/ottergrad/blob/64e8acb08776fbe0c3bc438a176812390f7a4d9a/ottergrad.png)
+![ottergrad Logo](https://github.com/raulniconico/ottergrad/blob/73803ef831a617b43520f1fa8e160b9052fb6668/logo/ottergrad.png)
 
 Ottergrad is an automatic differentiation tool support plenty of NumPy functions who borns from [Nuwa framework](https://github.com/raulniconico/Nuwa0.0.1).
 This project separates the auto-derivative function from Nuwa into a package, whose algorithm is more efficient, simpler and more stable than Nuwa 0.0.2.
