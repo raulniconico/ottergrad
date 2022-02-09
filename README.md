@@ -80,7 +80,7 @@ ottergrad provides the most commonly used activation functions, loss functions a
 
 and so on. They can be use as function.
 ## Examples
-You can visit https://github.com/raulniconico/ottergrad/blob/master/demo.ipynb to try the whole demo or use your own function,
+You can visit https://github.com/raulniconico/ottergrad/blob/0f4b8dad0bf5052cfb002ddb3a2ce56731263634/test/demo.ipynb to try the whole demo or use your own function,
 Another example is using otnp.where function as follow:
 
     a = Tensor()
