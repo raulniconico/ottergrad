@@ -23,7 +23,7 @@ The following are the main components of ottergrad and a mini user guide,
 <!-- tocstop -->
 
 
-## Tensor
+### Tensor
 Every calculation in ottergrad is Tensor operation
 One can simply create a Tensor instance by firstly import Ottergrad.autograd.Tensor
 
@@ -37,7 +37,7 @@ The Tensor does not need to be assigned a value at initialization but can be cre
     y = Tensor()
     y.setdata(np.zero((3, 3)))
 
-## Numpy support
+### Numpy support
 ottergrad provides a huge number of NumPy type operaters. Use following line to get all operators:
     
     Tensor().OVERLOADABLE_OPERATORS
@@ -52,7 +52,7 @@ Instead of computing the operator value directly, otternumpy will retrieve a Ten
     Sigmoid(otnp.dot(W, x))
 
 
-## Func and Graph
+### Func and Graph
 
 Once we have operators, we start to string them together into a whole calculation flow and compute and derive them in turn by the method of graph. So we use the Func class, which takes Tensor objects as inputs and builds graphs from them. Calculation details are explained in https://github.com/raulniconico/Nuwa0.0.1/blob/master/Nuwa_framework.pdf
     
@@ -60,7 +60,7 @@ Once we have operators, we start to string them together into a whole calculatio
     func = Func(func)
 
 
-## Forward and back propagation
+### Forward and back propagation
 Func class provides forward and backword, first forward propagation of the function, the method will return the final output
 
     func.forward()
@@ -72,14 +72,14 @@ Then use the backward() method of func to auto-derive the inputs and parameters,
     W.getgrad()
     array([[0.02035004, 0.02035004, 0.02035004, 0.02035004, 0.02035004]])
     
-## Neural Network support
+### Neural Network support
 ottergrad provides the most commonly used activation functions, loss functions and optimization algorithms used in neural networks.
 
     from Ottergrad.activation import Sigmoid, ReLU
     from Ottergrad.loss import MSE
 
 and so on. They can be use as function.
-## Examples
+### Examples
 You can visit https://github.com/raulniconico/ottergrad/blob/0f4b8dad0bf5052cfb002ddb3a2ce56731263634/test/demo.ipynb to try the whole demo or use your own function,
 Another example is using otnp.where function as follow:
 
