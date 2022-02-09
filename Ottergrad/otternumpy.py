@@ -393,11 +393,8 @@ class _where(Func):
         x = copy.deepcopy(node.getargs()[1])
         y = copy.deepcopy(node.getargs()[2])
 
-
-
         x.backward()
         y.backward()
-        print(node.getargs()[0].getroot().getdata())
 
         node.getleft().setgrad(np.where(node.getargs()[0].getroot().getdata(),
                                         x.getinput().getgrad(), y.getinput().getgrad()))
