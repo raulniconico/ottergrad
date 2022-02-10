@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="Ottergrad",
-    version="1.0.3",
+    version="1.0.0",
     author="Zixing QIU",
     author_email="zixing.qiu@etu.enseeiht.fr",
     description="Ottergrad is an automatic differentiation tool support plenty of NumPy functions who borns from Nuwa "
@@ -22,7 +22,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "Ottergrad"},
+    package_dir={"   ": "Ottergrad"},
     packages=setuptools.find_packages(where="Ottergrad"),
     python_requires=">=3.6",
 )
