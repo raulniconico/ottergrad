@@ -12,7 +12,7 @@ Second, ottergrad's computation graph can be easily used in Deep learning traini
 
 The following are the main components of ottergrad and a mini user guide, before using it, execute the following line:
 
-        pip install -i https://test.pypi.org/simple/Ottergrqd
+        pip install -i https://test.pypi.org/simple/ Ottergrad
 
 <!-- toc -->
 
