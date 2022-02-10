@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="Ottergrqd",
+    name="Ottergrad",
     version="1.0.0",
     author="Zixing QIU",
     author_email="zixing.qiu@etu.enseeiht.fr",
@@ -23,6 +23,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     package_dir={"": "Ottergrad"},
-    packages=setuptools.find_packages(where="Otter"),
+    packages=setuptools.find_packages(where="Ottergrad"),
     python_requires=">=3.6",
 )

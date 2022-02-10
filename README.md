@@ -1,15 +1,18 @@
 # ottergrad
 
-![ottergrad Logo](https://github.com/raulniconico/ottergrad/blob/73803ef831a617b43520f1fa8e160b9052fb6668/logo/ottergrad.png)
+![ottergrad Logo](https://github.com/raulniconico/ottergrad/blob/0f4b8dad0bf5052cfb002ddb3a2ce56731263634/logo/ottergrad.png)
 
 Ottergrad is an automatic differentiation tool support plenty of NumPy functions who borns from [Nuwa framework](https://github.com/raulniconico/Nuwa0.0.1).
 This project separates the auto-derivative function from Nuwa into a package, whose algorithm is more efficient, simpler and more stable than Nuwa 0.0.2.
+
 
 First of all, the API is very simple, all functions and classes are of NumPy type. Function calls and arguments are the same as in NumPy. So for projects using NumPy, ottergrad can be migrated very easily and don't need any extra API learning.
 
 Second, ottergrad's computation graph can be easily used in Deep learning training. There are fleurish activation functions and loss functions which are widely used.
 
-The following are the main components of ottergrad and a mini user guide, 
+The following are the main components of ottergrad and a mini user guide, before using it, execute the following line:
+
+        pip install -i https://test.pypi.org/simple/Ottergrqd
 
 <!-- toc -->
 

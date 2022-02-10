@@ -1,11 +1,9 @@
 [build-system]
 # Minimum requirements for the build system to execute.
 requires = [
-    "Cython==0.29.24",  # pin until PyPy releases v7.3.8
     # "Cython==0.29.24,<3.0",  # Note: keep in sync with tools/cythonize.py
     "matplotlib>=3.2.2",
     "numpy>=1.18.5",
-    "scipy>=1.4.1",
     "setuptools>=42",
     "wheel"
 ]
