@@ -92,3 +92,28 @@ Another example is using otnp.where function as follow:
     func.forward()
     func.backward()
     a.getgrad()
+
+Finally, we give a vivid 3 layers fully connected network to see if the gradient can be correctly given
+
+    x = Tensor(np.random.rand(5000, 30))
+    W1 = Tensor(np.random.rand(30,100))
+    W2 = Tensor(np.random.rand(100, 50))
+    W3 = Tensor(np.random.rand(50, 30))
+    
+    l1 = Sigmoid(otnp.dot(x, W1))
+    l2 = Sigmoid(otnp.dot(l1, W2))
+    l3 = otnp.dot(l2, W3)
+    func = Func(l3)
+    
+    func.forward()
+    func.backward()
+    
+    print("W1's gradient is " + str(W1.getgrad()))
+
+    W1's gradient is [[1.55841779 3.09941541 2.56407321 ... 4.21642738 2.98262384 2.19862303]
+     [1.49618532 3.07101007 2.50246591 ... 3.72816309 3.44169822 2.14018203]
+     [1.57303764 2.91315111 2.5995923  ... 4.00325851 3.29807133 2.03043232]
+     ...
+     [1.4124521  3.21118696 2.62250154 ... 3.68704166 3.28038238 1.98191629]
+     [1.5642053  2.93563087 2.7684254  ... 3.71760803 3.13955798 2.06892669]
+     [1.42228891 3.08226813 2.89191136 ... 3.50635962 3.0772686  1.92641901]]
