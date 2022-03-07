@@ -3,6 +3,7 @@ from operator import __matmul__
 import numpy as np
 from numpy import ndarray
 from inspect import signature
+from cuda import cuda, nvrtc
 
 import Ottergrad
 
